@@ -2,9 +2,11 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  let title = "Hello World!";
+  let textId = "title";
   return (
     <div>
-      <h1>Hello World!!!!</h1>
+      <h1 id={textId}>{title}</h1>
     </div>
   );
 }
