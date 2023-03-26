@@ -2,7 +2,16 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  let title = "Hello World!";
+  return (
+    <>
+      <Hello></Hello>
+      <Component></Component>
+    </>
+  );
+}
+
+function Hello() {
+  let title = "Hello World form hello";
   let textId = "title";
   let saveBtn = "Save Me";
   let saveMe = () => {
@@ -16,6 +25,10 @@ function App() {
       </button>
     </div>
   );
+}
+
+function Component() {
+  return <div>Another Component</div>;
 }
 
 export default App;
