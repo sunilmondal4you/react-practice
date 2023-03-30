@@ -6,27 +6,30 @@ function ListDemo1() {
   let [city, setCity] = useState("");
   let [cityValuePresent, setCityValuePresent] = useState(true);
   let [cityList, setCityList] = useState(list);
+
   let cityChangeHandler = (e) => {
     setCity(e.target.value);
   };
+
   let cityEnterHandler = (e) => {
+    if (e.keyCode === 13) {
+      console.log(city);
+      submit();
+    }
+  };
+
+  let submit = () => {
     if (!city) {
       setCityValuePresent(false);
       return;
     } else {
       setCityValuePresent(true);
     }
-
-    if (e.keyCode === 13) {
-      console.log(city);
-      submit();
-    }
-  };
-  let submit = () => {
     let newList = [city, ...cityList];
     setCityList(newList);
     setCity("");
   };
+
   return (
     <div>
       <div>
